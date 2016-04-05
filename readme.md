@@ -1,3 +1,5 @@
+ItTalents final project with Laravel 5.2 and AngularJS 1.5.3
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

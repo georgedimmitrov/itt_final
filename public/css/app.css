@@ -2,7 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  background: url("../images/bg.jpg") no-repeat  center center fixed;
+  background: url("../images/bg_03.jpg") no-repeat  center center fixed;
   background-size: cover;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -118,4 +118,8 @@ h3.text-muted, .footer p {
 .list-group-red .list-group-item:hover, .list-group-red .list-group-item.disabled {
     background-color: #4d0026;
     color: #fff;
+}
+
+span.help-block {
+  color: #cecece !important;
 }

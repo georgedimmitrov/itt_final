@@ -4,9 +4,9 @@
 
     angular
         .module('myApp')
-        .controller('UserCtrl', UserCtrl);
+        .controller('UserController', UserController);
 
-    function UserCtrl($scope) {
+    function UserController($scope) {
 
         var vm = this;
       

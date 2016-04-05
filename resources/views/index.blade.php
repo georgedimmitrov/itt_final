@@ -11,7 +11,9 @@
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/app.css">
+        <script>var baseUrl = "{{ url('/') }}/"</script>
     </head>
+    
     <body ng-app="myApp" ng-cloak>
         <div class="container">
         <div class="header clearfix">
@@ -45,6 +47,10 @@
 
     <!-- Application Scripts -->
     <script type="text/javascript" src="scripts/app.js"></script>
-    <script type="text/javascript" src="scripts/controllers/UserCtrl.js"></script>
+    <!-- controllers -->
+    <script type="text/javascript" src="scripts/controllers/UserController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/RegistrationController.js"></script>
+    <!-- services and models -->
     <script type="text/javascript" src="scripts/services/user.js"></script>
+    <script type="text/javascript" src="scripts/models/registerModel.js"></script>
 </html>

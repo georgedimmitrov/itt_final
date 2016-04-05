@@ -13,22 +13,22 @@
         	function ($routeProvider) {
         		$routeProvider.when('/', {
 					templateUrl: 'views/login.html',
-					controller: 'UserCtrl'
+					controller: 'UserController'
 				});
 				
 				$routeProvider.when('/login', {
 					templateUrl: 'views/login.html',
-					controller: 'UserCtrl'
+					controller: 'UserController'
 				});
 				
 				$routeProvider.when('/register', {
 					templateUrl: 'views/register.html',
-					controller: 'UserCtrl'
+					controller: 'RegistrationController'
 				});
 				
 				$routeProvider.when('/dashboard', {
 					templateUrl: 'views/dashboard.html',
-					controller: 'UserCtrl'
+					controller: 'UserController'
 				});
 				
 				$routeProvider.otherwise('/');

@@ -7,7 +7,10 @@
         <title>Samaritans</title>
         <meta name="description" content="">
         <meta name="author" content="S.P. G.D.">
-        
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="301262529415-guutgbs0958kcmgdrtv13lj64a2h7m1o.apps.googleusercontent.com.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/app.css">
@@ -15,17 +18,17 @@
             var baseUrl = "{{ url('/') }}/";
         </script>
     </head>
-    
+
     <body ng-cloak>
         <div class="container" ng-controller="GlobalController">
-            
+
             <div ng-view></div>
-            
+
             <footer class="footer">
                 <p>&copy; Siyana and Georgi's masterpiece</p>
             </footer>
         </div>
-        
+
     </body>
 
     <!-- Application Dependencies -->
@@ -36,7 +39,7 @@
     <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
-    
+
 
     <!-- Application Scripts -->
     <script type="text/javascript" src="scripts/app.js"></script>
@@ -44,7 +47,7 @@
     <script type="text/javascript" src="scripts/controllers/GlobalController.js"></script>
     <script type="text/javascript" src="scripts/controllers/UserController.js"></script>
     <script type="text/javascript" src="scripts/controllers/RegistrationController.js"></script>
-    
+
     <script type="text/javascript" src="scripts/controllers/NavController.js"></script>
     <!-- services and models -->
     <script type="text/javascript" src="scripts/models/userModel.js"></script>

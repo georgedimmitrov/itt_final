@@ -45,18 +45,18 @@ class RegistrationController extends Controller
             'password' => 'required|min:6',
             'location' => 'required'
         ]);
-        
+
         if ($validator->fails()) {
             return response($validator->errors()->all(), 422);
         }
-        
+
         $user = User::create([
             'username' => $request->input('username'),
             'email' => $request->input('email'),
             'password' => $request->input('password'),
             'location' => $request->input('location')
         ]);
-        
+
         return response($user, 201);
     }
 

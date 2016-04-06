@@ -1,25 +1,4 @@
-/*(function() {
-
-  'use strict';
-
-    angular
-        .module('myApp')
-        .controller('UserController', UserController);
-
-    function UserController($scope, $location) {
-
-        var vm = this;
-      
-        vm.users = [];
-
-    
-      }
-
-})();*/
-
-angular
-	.module('myApp')
-	.controller('RegistrationController', ['$scope', '$location', 'registerModel',
+myApp.controller('RegistrationController', ['$scope', '$location', 'registerModel',
 		function ($scope, $location, registerModel) {
 			/* Variables */
 			angular.extend($scope, {
@@ -30,16 +9,19 @@ angular
 			
 			/* Functions */
 			angular.extend($scope, {
-				registerNewUser: function (registerUserForm) {
-					if (registerUserForm.$valid) {
+				saveNewUser: function (addUserForm) {
+					if (addUserForm.$valid) {
+						$scope.formSubmitted = false;
 						registerModel.saveUser($scope.newUser)
 							.success(function (response) {
 								console.log('successfully sent data');
+								$location.path('/login');
 							})
 							.error(function (error) {
 								console.log(error);
 							});
 					} else {
+						$scope.formSubmitted = true;
 						console.log('error');
 					}
 				}

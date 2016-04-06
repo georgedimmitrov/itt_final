@@ -40,7 +40,7 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|min:4',
+            'username' => 'required',
             'email' => 'required',
             'password' => 'required|min:6',
             'location' => 'required'
@@ -49,11 +49,11 @@ class RegistrationController extends Controller
         if ($validator->fails()) {
             return response($validator->errors()->all(), 422);
         }
-
+        
         $user = User::create([
             'username' => $request->input('username'),
             'email' => $request->input('email'),
-            'password' => $request->input('password'),
+            'password' => \Hash::make($request->input('password')),
             'location' => $request->input('location')
         ]);
 

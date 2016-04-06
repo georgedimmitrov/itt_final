@@ -1,6 +1,4 @@
-angular
-    .module('myApp')
-    .factory('registerModel', ['$http', 
+myApp.factory('registerModel', ['$http', 
     	function ($http) {
 			return {
 				saveUser: function (userData) {
@@ -12,7 +10,7 @@ angular
 						method: "POST",
 						data: {
 							email: userData.email,
-							name: userData.name,
+							username: userData.username,
 							password: userData.password,
 							location: userData.location
 						}

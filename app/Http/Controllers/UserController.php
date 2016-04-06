@@ -20,6 +20,8 @@ class UserController extends Controller
         
         // if the credentials are wrong
         if (!Auth::attempt($credentials)) {
+            var_dump($request->input('email'));
+            var_dump($request->input('password'));
             return response('Email and Password do not match', 403);
         }
         

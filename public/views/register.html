@@ -5,11 +5,10 @@
 <div class="jumbotron index-container">
 	<h1>Join Samaritans</h1>
 	<div class="form-container">
-		<form ng-submit="registerNewUser(registerUserForm)"
-			name="registerUserForm" novalidate>
-			<!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+		<form ng-submit="saveNewUser(addUserForm)"
+			name="addUserForm" novalidate>
 			<div class="form-group"
-				ng-class="{'has-error' : registerUserForm.email.$invalid}">
+				ng-class="{'has-error' : registerUserForm.email.$invalid && formSubmitted}">
 				<label for="email">Email address</label>
 				<input type="email"
 					class="form-control"
@@ -20,15 +19,16 @@
 					required
 					autocomplete="off"
 				/>
-				<span ng-show="registerUserForm.email.$dirty && registerUserForm.email.$error.required" class="help-block">Email is required!</span>
-				<span ng-show="registerUserForm.email.$dirty && registerUserForm.email.$error.email"
+				<!-- <span ng-show="addUserForm.email.$dirty && addUserForm.email.$error.required" class="help-block">Email is required!</span>
+				<span ng-show="addUserForm.email.$dirty && addUserForm.email.$error.email"
 					class="help-block">
 					Please enter a valid email
-				</span>
+				</span> -->
+				<span ng-show="addUserForm.email.$invalid && formSubmitted" class="help-block">Email is required</span>
 			</div>
 
 			<div class="form-group"
-				ng-class="{'has-error' : registerUserForm.username.$invalid && formSubmitted}">
+				ng-class="{'has-error' : addUserForm.username.$invalid && formSubmitted}">
 				<label for="username">Username</label>
 				<input type="text"
 					class="form-control"
@@ -40,15 +40,16 @@
 					ng-minlength="4"
 					autocomplete="off"
 				/>
-				<span ng-show="registerUserForm.username.$dirty && registerUserForm.username.$error.required" class="help-block">Username is required!</span>
-				<span ng-show="registerUserForm.username.$dirty && registerUserForm.username.$error.minlength"
+				<!-- <span ng-show="addUserForm.username.$dirty && addUserForm.username.$error.required" class="help-block">Username is required!</span>
+				<span ng-show="addUserForm.username.$dirty && addUserForm.username.$error.minlength"
 					class="help-block">
 					Username must be at least 4 characters long
-				</span>
+				</span> -->
+				<span ng-show="addUserForm.username.$invalid && formSubmitted" class="help-block">Username is required</span>
 			</div>
 
 			<div class="form-group"
-				ng-class="{'has-error' : registerUserForm.password.$invalid && formSubmitted}">
+				ng-class="{'has-error' : addUserForm.password.$invalid && formSubmitted}">
 				<label for="password">Password</label>
 				<input type="password"
 					class="form-control"
@@ -60,11 +61,12 @@
 					required
 					autocomplete="off"
 				/>
-				<span ng-show="registerUserForm.password.$dirty && registerUserForm.password.$error.required" class="help-block">Password is required!</span>
-				<span ng-show="registerUserForm.password.$dirty && registerUserForm.password.$error.minlength"
+				<!-- <span ng-show="addUserForm.password.$dirty && addUserForm.password.$error.required" class="help-block">Password is required!</span>
+				<span ng-show="addUserForm.password.$dirty && addUserForm.password.$error.minlength"
 					class="help-block">
 					Password must be at least 6 characters long
-				</span>
+				</span> -->
+				<span ng-show="addUserForm.password.$invalid && formSubmitted" class="help-block">Password is required</span>
 			</div>
 
 			<!-- <div class="form-group">
@@ -90,13 +92,13 @@
 					required
 					autocomplete="off"
 				/>
-				<span ng-show="registerUserForm.location.$dirty && registerUserForm.location.$error.required" class="help-block">Location is required!</span>
+				<!-- <span ng-show="addUserForm.location.$dirty && addUserForm.location.$error.required" class="help-block">Location is required!</span> -->
+				<span ng-show="addUserForm.location.$invalid && formSubmitted" class="help-block">Location is required</span>
 			</div>
 
 			<button
-				type="submit"
 				class="btn btn-default btn-blue"
-
+				
 				>
 				Join Samaritans!
 			</button>

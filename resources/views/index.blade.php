@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="myApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,20 +11,11 @@
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/app.css">
-        <script>var baseUrl = "{{ url('/') }}/"</script>
+        <script>var baseUrl = "{{ url('/') }}/";</script>
     </head>
     
-    <body ng-app="myApp" ng-cloak>
-        <div class="container">
-        <div class="header clearfix">
-            <nav>
-                <ul class="nav nav-pills pull-right nav-blue">
-                    <li role="presentation" class="active"><a href="/profile">My profile</a></li>
-                    <li role="presentation"><a href="/auth/logout">Logout</a></li>
-                </ul>
-            </nav>
-            <h3 class="text-muted"><a href="#/" style="color: #fff; text-decoration: none;">Undef</a></h3>
-        </div>
+    <body ng-cloak>
+    <div class="container" ng-controller="GlobalController">
         
         <div ng-view></div>
         
@@ -39,18 +30,23 @@
 
     <!-- Application Dependencies -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+    
 
     <!-- Application Scripts -->
     <script type="text/javascript" src="scripts/app.js"></script>
     <!-- controllers -->
+    <script type="text/javascript" src="scripts/controllers/GlobalController.js"></script>
     <script type="text/javascript" src="scripts/controllers/UserController.js"></script>
     <script type="text/javascript" src="scripts/controllers/RegistrationController.js"></script>
+    
+    <script type="text/javascript" src="scripts/controllers/NavController.js"></script>
     <!-- services and models -->
-    <script type="text/javascript" src="scripts/services/user.js"></script>
+    <script type="text/javascript" src="scripts/models/userModel.js"></script>
     <script type="text/javascript" src="scripts/models/registerModel.js"></script>
 </html>

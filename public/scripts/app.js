@@ -4,6 +4,7 @@ var myApp = angular.module('myApp', [
         'ngCookies',
         'ui.bootstrap'
     ]);
+
 myApp.config(['$routeProvider', '$locationProvider',
     	function ($routeProvider, $locationProvider) {
     		$routeProvider.when('/', {
@@ -23,6 +24,18 @@ myApp.config(['$routeProvider', '$locationProvider',
 			
 			$routeProvider.when('/dashboard', {
 				templateUrl: 'views/dashboard.html',
+				controller: 'UserController',
+				authenticated: true
+			});
+			
+			$routeProvider.when('/game', {
+				templateUrl: 'views/game.html',
+				controller: 'UserController',
+				authenticated: true
+			});
+			
+			$routeProvider.when('/shop', {
+				templateUrl: 'views/shop.html',
 				controller: 'UserController',
 				authenticated: true
 			});

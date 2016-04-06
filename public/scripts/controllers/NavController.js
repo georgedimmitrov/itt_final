@@ -3,7 +3,13 @@ myApp.controller('NavController', ['$scope', '$location', 'userModel',
 		/* Variables */
 		angular.extend($scope, {
 			user: userModel.getUserObject(),
-			navUrl: []
+			navUrl: [{
+				name: 'Game',
+				url: '/game'
+			}, {
+				name: 'Shop',
+				url: '/shop'
+			}]
 		});
 		
 		/* Methods */
@@ -11,6 +17,14 @@ myApp.controller('NavController', ['$scope', '$location', 'userModel',
 			doLogout: function () {
 				userModel.doUserLogout();
 				$location.path('/');
+			},
+			
+			checkActiveLink: function (routeLink) {
+				console.log('----' + routeLink);
+				if ($location.path() == routeLink) {
+					
+					return 'make-active';
+				}
 			}
 		});
 	}

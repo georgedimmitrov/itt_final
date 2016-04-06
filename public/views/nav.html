@@ -1,21 +1,20 @@
 <nav ng-controller="NavController">
 
-
-        <ul class="nav nav-pills pull-left nav-blue">
+        <ul class="nav nav-pills pull-left nav-blue nav-white">
 
             <li>
                 <h3 class="text-muted">
-                    <a href="#/" style="color: #fff; text-decoration: none;">Undef</a>
+                    <a href="#/dashboard" style="color: #fff; text-decoration: none;">Samaritans</a>
                 </h3>
             </li>
 
-            <li
+            <li ng-repeat="link in navUrl"
                 role="presentation">
-                <a href="">Game</a>
-            </li>
-            <li
-                role="presentation">
-                <a href="">Shop</a>
+                <a href="#{{ link.url }}"
+                    ng-class="checkActiveLink(link.url)" 
+                    >
+                    {{ link.name }}
+                </a>
             </li>
 
         </ul>

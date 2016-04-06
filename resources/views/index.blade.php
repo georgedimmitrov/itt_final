@@ -4,28 +4,28 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Undefined</title>
+        <title>Samaritans</title>
         <meta name="description" content="">
         <meta name="author" content="S.P. G.D.">
         
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/app.css">
-        <script>var baseUrl = "{{ url('/') }}/";</script>
+        <script>
+            var baseUrl = "{{ url('/') }}/";
+        </script>
     </head>
     
     <body ng-cloak>
-    <div class="container" ng-controller="GlobalController">
+        <div class="container" ng-controller="GlobalController">
+            
+            <div ng-view></div>
+            
+            <footer class="footer">
+                <p>&copy; Siyana and Georgi's masterpiece</p>
+            </footer>
+        </div>
         
-        <div ng-view></div>
-        
-        <footer class="footer">
-            <p>&copy; Siyana and Georgi's masterpiece</p>
-        </footer>
-    </div>
-
-        
-        <!-- <div ng-view></div> -->
     </body>
 
     <!-- Application Dependencies -->

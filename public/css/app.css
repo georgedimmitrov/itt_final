@@ -4,6 +4,7 @@ body {
   padding-bottom: 20px;
   background: url("../images/bg_03.jpg") no-repeat  center center fixed;
   background-size: cover;
+  color: #fff;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -95,6 +96,11 @@ body {
 .nav-blue li a {
     color: #3498db;
 }
+
+.nav-white li a {
+    color: #fff;
+}
+
 .nav-blue li.active a {
   background-color: #3498db;
   color: #fff;
@@ -126,4 +132,8 @@ span.help-block {
 
 .left-float-button{
   margin-right: 60px;
+}
+
+.make-active {
+  font-weight: bold;
 }

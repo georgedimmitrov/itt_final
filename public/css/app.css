@@ -137,3 +137,11 @@ span.help-block {
 .make-active {
   font-weight: bold;
 }
+
+.shop-header-margin {
+  padding-bottom: 40px;
+}
+
+.shop-items-container {
+  width: 80%;
+}

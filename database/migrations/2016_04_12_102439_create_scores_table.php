@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShopItemsTable extends Migration
+class CreateScoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateShopItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('shop_items', function (Blueprint $table) {
+        Schema::create('scores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('photo_url');
-            $table->float('price');
-            $table->longText('description');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('score');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateShopItemsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('shop_items');
+        Schema::drop('scores');
     }
 }

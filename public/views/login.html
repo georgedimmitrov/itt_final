@@ -71,11 +71,30 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
+    FB.api('/me?fields=name,email', function(response) {
       console.log('Successful login for: ' + response.name);
+      // user email is response.email
+      //alert(response.email);
+      // http request to find the user with the given email and if the email exists, you log the user into
+      /*
+      After a successful login using Facebook, you will have the person's email address,
+      Facebook ID, and access token. Your app should search for an existing account that has
+      been created with that same email address.
+
+      At this point, you should log in the person as you normally would.
+
+      If there is not an existing entry in your database with that email address,
+      then you should consider them to be a new user.
+      */
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
+  }
+
+  function onSignIn(response)
+  {
+    var userEmail = response.wc.hg;
+    //alert(userEmail);
   }
 </script>
 <div class="header clearfix">
@@ -126,7 +145,7 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button scope="email,public_profile" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">

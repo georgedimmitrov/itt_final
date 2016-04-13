@@ -7,6 +7,7 @@
         <title>Samaritans</title>
         <meta name="description" content="">
         <meta name="author" content="S.P. G.D.">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="google-signin-client_id" content="301262529415-hqa5h289utdjudkh9e8pcfrdinhkuuto.apps.googleusercontent.com">
 
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
@@ -51,4 +52,12 @@
     <!-- services and models -->
     <script type="text/javascript" src="scripts/models/userModel.js"></script>
     <script type="text/javascript" src="scripts/models/registerModel.js"></script>
+    
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 </html>

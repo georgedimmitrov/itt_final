@@ -1,6 +1,6 @@
 (function (window) {
 
-    window.game = window.game || {}
+    window.game = window.game || {};
 
     function Samaritans() {
         this.initialize();
@@ -102,8 +102,16 @@
         var gameScore = game.score * 1;
         //alert(gameScore);
         // TODO: http request for saving the score
-
-
+        
+        var scoreRequest = $.ajax({
+            '_token': $('meta[name=csrf-token]').attr('content'),
+            type: 'post',
+            url: '/score',
+            data: {score: gameScore},
+            success: function (data) {
+                console.log(data);
+            }
+        });
 
         var scene = new game.GameOver();
         stage.addChild(scene);

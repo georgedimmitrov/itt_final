@@ -9,7 +9,7 @@ use App\Http\Requests;
 
 class UserController extends Controller
 {
-    
+
     public function checkAuth(Request $request)
     {
         // setting the credentials array
@@ -17,17 +17,15 @@ class UserController extends Controller
             'email' => $request->input('email'),
             'password' => $request->input('password')
         ];
-        
+
         // if the credentials are wrong
         if (!Auth::attempt($credentials)) {
-            var_dump($request->input('email'));
-            var_dump($request->input('password'));
             return response('Email and Password do not match', 403);
         }
-        
-        return response(Auth::user(), 201);
+
+        return response(Auth::user(), 200);
     }
-    
+
     /**
      * Display a listing of the resource.
      *

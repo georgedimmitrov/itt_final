@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Request;
+//use Request;
 
 use App\User;
 
@@ -39,23 +39,11 @@ class ScoreController extends Controller
      */
     public function store(Request $request)
     {
-        /*if ($request->isMethod('post')){    
-            return response()->json(['response' => 'This is post method']);
-        }
+        $user = User::findOrFail($request->input('userId'));
+        $user->score = $request->input('score');
+        $user->save();
 
-        return response()->json(['response' => 'This is get method']);*/
-        
-        $data = Request::all();
-        
-        $userHighscore = $data;
-        
-        // to get number only - $userHighscore['score']
-       
-        $userHS = User::create([
-            'score' => $userHighscore['score']
-        ]);
-        
-        return response($userHS, 201);
+        return $user;
     }
 
     /**

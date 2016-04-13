@@ -36,7 +36,7 @@
     p.ceiling = null;
     p.floor = null;
     p.betweenLevels = true;
-    p.numLives = 3;
+    p.numLives = 1;
     p.delta = null;
 
     // Controls

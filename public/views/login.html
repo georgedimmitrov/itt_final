@@ -74,7 +74,12 @@
     FB.api('/me?fields=name,email', function(response) {
       console.log('Successful login for: ' + response.name);
       // user email is response.email
+
+
       //alert(response.email);
+
+
+
       // http request to find the user with the given email and if the email exists, you log the user into
       /*
       After a successful login using Facebook, you will have the person's email address,
@@ -94,7 +99,13 @@
   function onSignIn(response)
   {
     var userEmail = response.wc.hg;
+
+
+
     //alert(userEmail);
+
+
+
   }
 </script>
 <div class="header clearfix">

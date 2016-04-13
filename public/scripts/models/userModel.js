@@ -1,7 +1,7 @@
-myApp.factory('userModel', ['$http', '$cookies', 
+myApp.factory('userModel', ['$http', '$cookies',
 	function ($http, $cookies) {
 		var userModel = {};
-		
+
 		userModel.doLogin = function (loginData) {
 			return $http({
 				headers: {
@@ -15,44 +15,44 @@ myApp.factory('userModel', ['$http', '$cookies',
 				}
 			}).success(function (response) {
 				console.log(response);
-				$cookies.put('auth', JSON.stringify(response));
+				localStorage.setItem('auth', JSON.stringify(response));
 			}).error(function (data, status, headers) {
 				console.log(data, status, headers);
 				alert(data);
 			});
 		};
-		
+
 		/**
 		 * Return whether the user is looged in or not
 		 * based on the cookie set during the login
-		 * 
+		 *
 		 * @return {boolean}
 		 */
 		userModel.getAuthStatus = function () {
-			var status = $cookies.get('auth');
-			
+			var status = JSON.parse(localStorage.getItem('auth'));
+
 			if (status) {
 				return true;
-			} 
-			
+			}
+
 			return false;
-			
+
 		};
-		
+
 		/**
 		 * Get the user object converted from string to JSON
 		 * @return {user object}
 		 */
 		userModel.getUserObject = function () {
-			var userObj = angular.fromJson($cookies.get('auth'));
-			
+			var userObj = JSON.parse(localStorage.getItem('auth'));
+
 			return userObj;
 		};
-		
+
 		userModel.doUserLogout = function () {
-			$cookies.remove('auth');
+			localStorage.removeItem('auth');
 		};
-		
+
 		return userModel;
 	}
 ]);

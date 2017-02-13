@@ -8,6 +8,9 @@ Once you've downloaded our project you're only a couple of steps away from runni
 
 1) Have a MySQL database (create database 'whatever'; and set it up in your .env file, more specifically the 
 
+npm install;
+composer install;
+
 DB_DATABASE='whatever'
 DB_USERNAME=your username
 DB_PASSWORD=your password

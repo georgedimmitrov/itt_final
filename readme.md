@@ -1,29 +1,23 @@
 ItTalents final project with Laravel 5.2 and AngularJS 1.5.3
 
-# Laravel PHP Framework
+ -- -- -- -- -- -- 
+ Installation guide
+ -- -- -- -- -- --
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Once you've downloaded our project you're only a couple of steps away from running it on your machine and they are..
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+1) Have a MySQL database (create database 'whatever'; and set it up in your .env file, more specifically the 
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+npm install;
+composer install;
 
-## Official Documentation
+DB_DATABASE='whatever'
+DB_USERNAME=your username
+DB_PASSWORD=your password
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+php artisan key:generate
+php artisan migrate
 
-## Contributing
+2) -optional step- You could choose to seed your database which will basically add a test user to it (it's a doge really) and in order to seed you simply need to type in php artisan db:seed from your project root folder
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+3) You should run 'php artisan serve' from the project root folder and go to localhost:8000 and if you've skipped step 2, you should register and login to play our game

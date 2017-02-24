@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
+use DB;
 
 class UserController extends Controller
 {
@@ -63,9 +64,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $users = DB::table('users')->get();
+        return response($users, 200);
     }
 
     /**

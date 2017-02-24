@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -32,30 +32,29 @@
   }
 
   window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1019380158141052',
-    cookie     : true,  // enable cookies to allow the server to access
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.5' // use graph api version 2.5
-  });
+    FB.init({
+      appId      : '1019380158141052',
+      cookie     : true,  // enable cookies to allow the server to access
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.5' // use graph api version 2.5
+    });
 
-  // Now that we've initialized the JavaScript SDK, we call
-  // FB.getLoginStatus().  This function gets the state of the
-  // person visiting this page and can return one of three states to
-  // the callback you provide.  They can be:
-  //
-  // 1. Logged into your app ('connected')
-  // 2. Logged into Facebook, but not your app ('not_authorized')
-  // 3. Not logged into Facebook and can't tell if they are logged into
-  //    your app or not.
-  //
-  // These three cases are handled in the callback function.
+    // Now that we've initialized the JavaScript SDK, we call
+    // FB.getLoginStatus().  This function gets the state of the
+    // person visiting this page and can return one of three states to
+    // the callback you provide.  They can be:
+    //
+    // 1. Logged into your app ('connected')
+    // 2. Logged into Facebook, but not your app ('not_authorized')
+    // 3. Not logged into Facebook and can't tell if they are logged into
+    //    your app or not.
+    //
+    // These three cases are handled in the callback function.
 
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
   };
 
   // Load the SDK asynchronously
@@ -75,10 +74,7 @@
       console.log('Successful login for: ' + response.name);
       // user email is response.email
 
-
       //alert(response.email);
-
-
 
       // http request to find the user with the given email and if the email exists, you log the user into
       /*
@@ -96,31 +92,24 @@
     });
   }
 
-  function onSignIn(response)
-  {
+  function onSignIn(response) {
     var userEmail = response.wc.hg;
-
-
-
     //alert(userEmail);
-
-
-
   }
-</script>
+</script> -->
 <div class="header clearfix">
 
 </div>
 
 <div class="jumbotron index-container">
-	<h1>Welcome to Samaritans</h1>
-	<p class="lead">Please login to view our amazing game</p>
+	<h1><span class="subtitle-text">Добре дошли в</span> <span class="title-text">Samaritans in Space</span></h1>
+	<p class="lead">Моля влезте с акаунта си за достъп до играта</p>
 	<div class="form-container">
 		<form name="loginForm"
 			ng-submit="doLogin(loginForm)">
 
 			<div class="form-group">
-				<label for="email">Email address</label>
+				<label for="email">Email</label>
 				<input type="email"
 					class="form-control"
 					id="email"
@@ -131,7 +120,7 @@
 				/>
 			</div>
 			<div class="form-group">
-				<label for="password">Password</label>
+				<label for="password">Парола</label>
 				<input type="password"
 					class="form-control"
 					id="password"
@@ -144,11 +133,11 @@
 			<button type="submit"
 				class="btn btn-default btn-blue"
 				name="loginButton">
-				Log In
+				Влез
 			</button>
 		</form>
 	</div>
-	<p class="join-btn"><a class="btn btn-lg btn-success btn-blue" href="#/register" role="button">Join</a></p>
+	<p class="join-btn"><a class="btn btn-lg btn-success" href="#/register" role="button">Регистрация</a></p>
 
 <!--
   Below we include the Login Button social plugin. This button uses
@@ -156,15 +145,15 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="email,public_profile" onlogin="checkLoginState();">
-</fb:login-button>
+<!-- <fb:login-button scope="email,public_profile" onlogin="checkLoginState();">
+</fb:login-button> -->
 
 <div id="status">
 </div>
 
 <!-- Add Google login button -->
 
-<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
 
 
 </div>

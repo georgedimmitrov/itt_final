@@ -20,9 +20,9 @@ class CreateScoresTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('highscore_id')->references('id')->on('scores');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->foreign('highscore_id')->references('id')->on('scores');
+        // });
     }
 
     /**
@@ -32,9 +32,9 @@ class CreateScoresTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('users_highscore_id_foreign');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->dropForeign('users_highscore_id_foreign');
+        // });
         Schema::drop('scores');
     }
 }

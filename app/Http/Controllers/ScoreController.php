@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-//use Request;
+// use Request;
 
 use App\User;
+use App\Score;
 
 class ScoreController extends Controller
 {
@@ -40,7 +41,12 @@ class ScoreController extends Controller
     public function store(Request $request)
     {
         $user = User::findOrFail($request->input('userId'));
-        $user->score = $request->input('score');
+        if ($user->highscore && $user->highscore < $request->input('score')) {
+            $user->highscore = $request->input('score');
+        } else {
+            $user->highscore = $request->input('score');
+        }
+
         $user->save();
 
         return $user;
@@ -52,9 +58,9 @@ class ScoreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+
     }
 
     /**

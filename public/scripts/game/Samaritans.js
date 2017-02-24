@@ -100,7 +100,7 @@
     }
     p.gameStateGameOver = function (tickEvent) {
         var gameScore = game.score * 1;
-        //alert(gameScore);
+        // alert(gameScore);
         // TODO: http request for saving the score
         var user = JSON.parse(localStorage.getItem('auth'));
         var scoreRequest = $.ajax({

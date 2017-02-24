@@ -1,0 +1,29 @@
+<div class="header clearfix">
+  <div ng-include="global.navUrl"></div>
+</div>
+
+<div id="shop-items-container" class="jumbotron index-container">
+  <h1>Класация</h1>
+
+  <br>
+  <br>
+
+  <table class="table highscore">
+    <thead>
+      <tr>
+        <th>Име</th>
+        <th>Email</th>
+        <th>Най-висок резултат</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in allUsers | orderBy: sortType:sortReverse">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.highscore }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

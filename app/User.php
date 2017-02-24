@@ -16,7 +16,7 @@ class User extends Authenticatable
     protected $table = 'users';
 
     protected $fillable = [
-        'username', 'email', 'password', 'location'
+        'username', 'email', 'password', 'location', 'highscore'
     ];
 
     /**
@@ -29,19 +29,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function highscore()
-    {
-        return $this -> belongsTo('App\Score');
-    }
+    // public function highscore()
+    // {
+    //     return $this -> belongsTo('App\Score');
+    // }
 
-    public function scores()
-    {
-        return $this -> hasMany('App\Score');
-    }
+    // public function scores()
+    // {
+    //     return $this -> hasMany('App\Score', 'user_id');
+    // }
 
-    public function shop_items()
-    {
-        return $this -> belongsToMany('App\Shop_Item' , 'user_shop_items');
-    }
+    // public function shop_items()
+    // {
+    //     return $this -> belongsToMany('App\Shop_Item' , 'user_shop_items');
+    // }
 
 }

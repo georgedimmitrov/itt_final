@@ -13,7 +13,7 @@
         <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/app.css">
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
         <script>
             var baseUrl = "{{ url('/') }}/";
         </script>
@@ -25,7 +25,7 @@
             <div ng-view></div>
 
             <footer class="footer">
-                <p>&copy; Siyana and Georgi's masterpiece</p>
+                <p>&copy; Георги Димитров 2017</p>
             </footer>
         </div>
 
@@ -47,12 +47,13 @@
     <script type="text/javascript" src="scripts/controllers/GlobalController.js"></script>
     <script type="text/javascript" src="scripts/controllers/UserController.js"></script>
     <script type="text/javascript" src="scripts/controllers/RegistrationController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/AllUsersController.js"></script>
 
     <script type="text/javascript" src="scripts/controllers/NavController.js"></script>
     <!-- services and models -->
     <script type="text/javascript" src="scripts/models/userModel.js"></script>
     <script type="text/javascript" src="scripts/models/registerModel.js"></script>
-    
+
     <script>
         $.ajaxSetup({
             headers: {

@@ -3,13 +3,13 @@
 </div>
 
 <div class="jumbotron index-container">
-	<h1>Join Samaritans</h1>
+	<h1>Регистрация в Samaritans</h1>
 	<div class="form-container">
 		<form ng-submit="saveNewUser(addUserForm)"
 			name="addUserForm" novalidate>
 			<div class="form-group"
 				ng-class="{'has-error' : registerUserForm.email.$invalid && formSubmitted}">
-				<label for="email">Email address</label>
+				<label for="email">Email</label>
 				<input type="email"
 					class="form-control"
 					id="email"
@@ -24,17 +24,17 @@
 					class="help-block">
 					Please enter a valid email
 				</span> -->
-				<span ng-show="addUserForm.email.$invalid && formSubmitted" class="help-block">Email is required</span>
+				<span ng-show="addUserForm.email.$invalid && formSubmitted" class="help-block">Email адресът е задължителен</span>
 			</div>
 
 			<div class="form-group"
 				ng-class="{'has-error' : addUserForm.username.$invalid && formSubmitted}">
-				<label for="username">Username</label>
+				<label for="username">Име</label>
 				<input type="text"
 					class="form-control"
 					id="username"
 					name="username"
-					placeholder="Username"
+					placeholder="Име"
 					ng-model="newUser.username"
 					required
 					ng-minlength="4"
@@ -45,17 +45,17 @@
 					class="help-block">
 					Username must be at least 4 characters long
 				</span> -->
-				<span ng-show="addUserForm.username.$invalid && formSubmitted" class="help-block">Username is required</span>
+				<span ng-show="addUserForm.username.$invalid && formSubmitted" class="help-block">Името е задължително</span>
 			</div>
 
 			<div class="form-group"
 				ng-class="{'has-error' : addUserForm.password.$invalid && formSubmitted}">
-				<label for="password">Password</label>
+				<label for="password">Парола</label>
 				<input type="password"
 					class="form-control"
 					id="password"
 					name="password"
-					placeholder="Password"
+					placeholder="Парола"
 					ng-model="newUser.password"
 					ng-minlength="6"
 					required
@@ -66,7 +66,7 @@
 					class="help-block">
 					Password must be at least 6 characters long
 				</span> -->
-				<span ng-show="addUserForm.password.$invalid && formSubmitted" class="help-block">Password is required</span>
+				<span ng-show="addUserForm.password.$invalid && formSubmitted" class="help-block">Паролата е задължителна</span>
 			</div>
 
 			<!-- <div class="form-group">
@@ -82,26 +82,29 @@
 			</div> -->
 
 			<div class="form-group">
-				<label for="location">Location</label>
+				<label for="location">Държава</label>
 				<input type="text"
 					class="form-control"
 					id="location"
 					name="location"
-					placeholder="Location"
+					placeholder="Държава"
 					ng-model="newUser.location"
 					required
 					autocomplete="off"
 				/>
 				<!-- <span ng-show="addUserForm.location.$dirty && addUserForm.location.$error.required" class="help-block">Location is required!</span> -->
-				<span ng-show="addUserForm.location.$invalid && formSubmitted" class="help-block">Location is required</span>
+				<span ng-show="addUserForm.location.$invalid && formSubmitted" class="help-block">Държавата е задължителна</span>
 			</div>
 
-			<button
-				class="btn btn-default btn-blue"
-				
-				>
-				Join Samaritans!
+			<button class="btn btn-success" role="button">
+				Присъедини се!
 			</button>
+
+			<p class="join-btn">
+				<a class="btn btn-small btn-warning" href="#/" role="button">
+					Назад
+				</a>
+			</p>
 		</form>
 	</div>
 </div>

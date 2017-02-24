@@ -23,4 +23,5 @@ Route::resource('user', 'UserController');
 Route::resource('register', 'RegistrationController');
 
 
-Route::post('/score', 'ScoreController@store');
+Route::post('score', 'ScoreController@store');
+Route::get('highscore-wat', 'UserController@show');

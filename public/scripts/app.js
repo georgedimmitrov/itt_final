@@ -11,45 +11,51 @@ myApp.config(['$routeProvider', '$locationProvider',
 				templateUrl: 'views/login.html',
 				controller: 'UserController'
 			});
-			
+
 			$routeProvider.when('/login', {
 				templateUrl: 'views/login.html',
 				controller: 'UserController'
 			});
-			
+
 			$routeProvider.when('/register', {
 				templateUrl: 'views/register.html',
 				controller: 'RegistrationController'
 			});
-			
+
 			$routeProvider.when('/dashboard', {
 				templateUrl: 'views/dashboard.html',
 				controller: 'UserController',
 				authenticated: true
 			});
-			
+
 			$routeProvider.when('/game', {
 				templateUrl: 'views/game.html',
 				controller: 'UserController',
 				authenticated: true
 			});
-			
+
 			$routeProvider.when('/shop', {
 				templateUrl: 'views/shop.html',
 				controller: 'UserController',
 				authenticated: true
 			});
-			
+
+			$routeProvider.when('/highscore', {
+				templateUrl: 'views/highscore.html',
+				controller: 'AllUsersController',
+				authenticated: true
+			});
+
 			$routeProvider.when('/logout', {
 				templateUrl: 'views/logout.html',
 				controller: 'UserController',
 				authenticated: true
 			});
-			
+
 			$routeProvider.otherwise('/');
     	}
 	]);
-	
+
 myApp.run(["$rootScope", "$location", 'userModel',
 	function($rootScope, $location, userModel) {
 

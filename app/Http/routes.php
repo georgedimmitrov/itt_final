@@ -16,12 +16,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-
-
 Route::post('auth', 'UserController@checkAuth');
 Route::resource('user', 'UserController');
 Route::resource('register', 'RegistrationController');
-
 
 Route::post('score', 'ScoreController@store');
 Route::get('highscore-wat', 'UserController@show');

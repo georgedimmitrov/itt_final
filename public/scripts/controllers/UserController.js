@@ -1,14 +1,20 @@
-myApp.controller('UserController', ['$scope', '$location', 'userModel', '$http',
-	function ($scope, $location, userModel) {
-		/* Variables */
-
+myApp.controller('UserController', ['$scope', '$rootScope', '$location', 'userModel', '$http',
+	function ($scope, $rootScope, $location, userModel, registerModel) {
 		/* Functions */
-		angular.extend($scope, {
-			login: {
-				email: 'georgi@abv.bg',
-				password: 'georgiroot'
-			}
-		});
+		// angular.extend($scope, {
+		// 	login: {
+		// 		email: 'georgi@abv.bg',
+		// 		password: 'georgiroot'
+		// 	}
+		// });
+		if ($rootScope.userData) {
+			angular.extend($scope, {
+				login: {
+					email: $rootScope.userData.email,
+					password: $rootScope.userData.password
+				}
+			});
+		}
 
 		angular.extend($scope, {
 			doLogin: function (loginForm) {

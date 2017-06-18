@@ -9,6 +9,8 @@ use App\Http\Requests;
 
 use App\User;
 use App\Score;
+use Log;
+
 
 class ScoreController extends Controller
 {
@@ -41,9 +43,8 @@ class ScoreController extends Controller
     public function store(Request $request)
     {
         $user = User::findOrFail($request->input('userId'));
-        if ($user->highscore && $user->highscore < $request->input('score')) {
-            $user->highscore = $request->input('score');
-        } else {
+        if (($user->highscore && $user->highscore < $request->input('score')) || !$user->highscore) {
+            Log::info($user->highscore);
             $user->highscore = $request->input('score');
         }
 

@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('location');
             $table->integer('highscore')->unsigned()->nullable();
-            $table->float('currency');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -12,7 +12,6 @@ class User extends Authenticatable
      *
      * @var array
      */
-
     protected $table = 'users';
 
     protected $fillable = [
@@ -24,11 +23,10 @@ class User extends Authenticatable
      *
      * @var array
      */
-
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+}
     // public function highscore()
     // {
     //     return $this -> belongsTo('App\Score');
@@ -44,4 +42,4 @@ class User extends Authenticatable
     //     return $this -> belongsToMany('App\Shop_Item' , 'user_shop_items');
     // }
 
-}
+

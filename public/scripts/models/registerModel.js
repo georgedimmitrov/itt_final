@@ -1,4 +1,4 @@
-myApp.factory('registerModel', ['$http', 
+myApp.factory('registerModel', ['$http',
     	function ($http) {
 			return {
 				saveUser: function (userData) {
@@ -16,6 +16,6 @@ myApp.factory('registerModel', ['$http',
 						}
 					});
 				}
-			}; 		
+			};
     	}
 	]);

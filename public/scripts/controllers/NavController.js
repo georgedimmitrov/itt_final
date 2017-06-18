@@ -7,10 +7,10 @@ myApp.controller('NavController', ['$scope', '$location', 'userModel',
 			navUrl: [{
 				name: 'Игра',
 				url: '/game'
-			}, {
+			}/*, {
 				name: 'Магазин',
 				url: '/shop'
-			}, {
+			}*/, {
 				name: 'Класация',
 				url: '/highscore'
 			}]

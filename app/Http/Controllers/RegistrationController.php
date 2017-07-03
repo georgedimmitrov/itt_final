@@ -49,12 +49,13 @@ class RegistrationController extends Controller
         if ($validator->fails()) {
             return response($validator->errors()->all(), 422);
         }
-        
+
         $user = User::create([
             'username' => $request->input('username'),
             'email' => $request->input('email'),
             'password' => \Hash::make($request->input('password')),
-            'location' => $request->input('location')
+            'location' => $request->input('location'),
+            'highscore' => 0
         ]);
 
         return response($user, 201);
